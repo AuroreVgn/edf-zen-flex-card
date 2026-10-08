@@ -29,7 +29,7 @@ Carte personnalisée **Lovelace** pour afficher les journées et tarifs de l'off
 - Éditeur visuel permettant de personnaliser le titre, l'entité et les options d'affichage.
 - Détection automatique du capteur de journée lorsque l'entité n'est pas précisée.
 
-## Installation
+## 📦 Installation
 
 ### Option A — HACS (recommandé)
 
@@ -111,7 +111,7 @@ La carte exploite les états et attributs de l'intégration **EDF Zen Flex**, no
 
 Les journées non connues sont affichées comme telles ; elles ne sont pas déduites ou inventées.
 
-## 🐞 Signaler un problème
+## 🤝 Signaler un problème
 
 Ouvrir une [issue GitHub](https://github.com/AuroreVgn/edf-zen-flex-card/issues) en précisant la version de Home Assistant, le navigateur, la configuration YAML et les éventuelles erreurs de console.
 
