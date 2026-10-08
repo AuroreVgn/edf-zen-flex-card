@@ -117,7 +117,7 @@ Ouvrir une [issue GitHub](https://github.com/AuroreVgn/edf-zen-flex-card/issues)
 
 ## 📄 Licence
 
-Consulter le fichier `LICENSE` du dépôt s'il est présent. La carte est distribuée indépendamment de l'intégration.
+Cette carte est distribuée sous licence **MIT**. Consultez le fichier [LICENSE](LICENSE).
 
 ---
 
