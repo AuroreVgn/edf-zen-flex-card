@@ -4,6 +4,10 @@ Carte Lovelace pour visualiser les données de l'intégration **EDF Zen Flex** d
 
 > **État du projet :** préparation de la première version bêta. La carte n'est pas encore disponible à l'installation depuis ce dépôt.
 
+## Avertissement
+
+Projet communautaire indépendant, sans affiliation avec EDF.
+
 ## Fonctionnalités prévues
 
 - Affichage des journées **Éco**, **Sobriété** et **Bonus**.
@@ -19,7 +23,3 @@ Cette carte utilise les entités fournies par [EDF Zen Flex pour Home Assistant]
 ## Installation
 
 Les instructions d'installation via HACS seront publiées avec la première version bêta.
-
-## Avertissement
-
-Projet communautaire indépendant, sans affiliation avec EDF.
