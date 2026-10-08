@@ -1,8 +1,8 @@
 ---
-name: "🐞 Signaler un bug"
-about: "Signaler un problème avec EDF Zen Flex Card"
+name: "\U0001F41E Signaler un bug"
+about: Signaler un problème avec EDF Zen Flex Card
 title: "[BUG] - "
-labels: "bug"
+labels: bug
 assignees: AuroreVgn
 type: Bug
 
