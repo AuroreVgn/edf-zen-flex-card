@@ -129,7 +129,7 @@ class ZenFlexEditor extends HTMLElement{
       }
     }
     for(const key of ['title','mode','show_tariffs','show_remaining']){
-      const input=this.querySelector('[data-field="'+key+'"]');if(!input||document.activeElement===input)return;
+      const input=this.querySelector('[data-field="'+key+'"]');if(!input||document.activeElement===input)continue;
       if(input.type==='checkbox')input.checked=this.config[key]!==false;
       else input.value=this.config[key]||(key==='mode'?'full':'');
     }
