@@ -24,7 +24,7 @@ header{display:flex;justify-content:space-between;align-items:center;gap:12px;ma
 button{font:inherit;color:inherit;background:var(--zf-soft);border:1px solid var(--zf-surface-border);border-radius:11px;padding:8px 12px;cursor:pointer;touch-action:manipulation}button:focus-visible{outline:2px solid var(--primary-color)}.refresh{border-radius:50%;width:42px;height:42px;padding:0;font-size:23px}.refresh-icon{display:inline-block;line-height:1}.refresh.busy .refresh-icon{animation:zen-flex-spin .8s linear infinite}.refresh:disabled{opacity:.65}@keyframes zen-flex-spin{to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){.refresh.busy .refresh-icon{animation:none}}
 .days{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.day{min-width:0;min-height:132px;box-sizing:border-box;border:1px solid var(--zf-surface-border);border-left:4px solid var(--zf-surface-border);border-radius:17px;padding:17px 14px;position:relative;overflow:hidden;background:var(--zf-surface)}.day:after{content:'';position:absolute;width:80px;height:80px;right:-35px;top:-35px;border:13px solid currentColor;border-radius:50%;opacity:.04;pointer-events:none}.day.eco{color:var(--zf-green);background:var(--zf-eco-bg);border-left-color:var(--zf-green)}.day.sobriete{color:var(--zf-red);background:var(--zf-red-bg);border-left-color:var(--zf-red)}.day.bonus{color:var(--zf-blue);background:var(--zf-blue-bg);border-left-color:var(--zf-blue)}.label{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--secondary-text-color)}.status{font-size:24px;font-weight:750;letter-spacing:-.5px;margin:13px 0 9px;display:flex;align-items:center;gap:5px;overflow-wrap:anywhere}.day:not(.eco):not(.sobriete):not(.bonus) .status{color:var(--primary-text-color)}.status ha-icon{--mdc-icon-size:27px!important;margin-right:4px!important}.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--disabled-text-color);margin-right:6px;flex-shrink:0}.eco .dot{background:var(--zf-green)}.sobriete .dot{background:var(--zf-red)}.bonus .dot{background:var(--zf-blue)}.date{font-size:12px;color:var(--secondary-text-color)}
 .counts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:15px 0}.count{box-sizing:border-box;min-width:0;min-height:76px;border:1px solid var(--zf-surface-border);border-left:3px solid var(--zf-surface-border);border-radius:13px;padding:12px 14px;background:var(--zf-surface);display:flex;flex-direction:column;justify-content:center;align-items:flex-start}.count.eco{border-left-color:var(--zf-green)}.count.sobriete{border-left-color:var(--zf-red)}.count.bonus{grid-column:1/-1;border-left-color:var(--zf-blue)}.number{font-size:25px;font-weight:750;font-variant-numeric:tabular-nums}.count.eco .number{color:var(--zf-green)}.count.sobriete .number{color:var(--zf-red)}.count.bonus .number{color:var(--zf-blue)}.count small{display:flex;align-items:center;gap:4px;font-size:12px;line-height:1.35;color:var(--secondary-text-color);margin-top:5px}.count small ha-icon{--mdc-icon-size:18px!important;margin-right:3px!important}
-.remaining{margin:0;padding:0}.remaining-note,.tariff-note,.tariff-source,.foot{font-size:11px;line-height:1.6;color:var(--secondary-text-color);white-space:pre-line}.warning{color:var(--error-color);font-size:13px;margin:12px 0}.pricepanel{box-sizing:border-box;margin-top:14px;border:1px solid var(--zf-surface-border);border-radius:18px;padding:17px;background:var(--zf-price-bg)}.pricehead{display:flex;flex-direction:column;align-items:flex-start;gap:9px}.pricevalue{font-size:30px;line-height:1.2;letter-spacing:-.7px;font-weight:750}.badge{font-size:11px;border-radius:6px;padding:3px 7px;margin-left:4px;background:var(--primary-color);color:var(--text-primary-color,#fff)}:host([data-dark]) .badge{background:rgba(130,170,235,.2);color:var(--primary-text-color);border:1px solid var(--zf-surface-border)}.rate-table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px;font-variant-numeric:tabular-nums}.rate-table th,.rate-table td{border-top:1px solid var(--zf-surface-border);padding:10px 4px;text-align:right;vertical-align:middle}.rate-table th:first-child,.rate-table td:first-child{text-align:left}.rate-table ha-icon{--mdc-icon-size:18px!important;margin-right:4px!important}.rate-highlight{font-weight:750;color:var(--zf-active)}.tariff-note{margin-top:9px}.tariff-source{overflow-wrap:anywhere}
+.remaining{margin:0;padding:0}.remaining-note,.tariff-note,.tariff-source,.foot{font-size:11px;line-height:1.6;color:var(--secondary-text-color);white-space:pre-line}.warning{color:var(--error-color);font-size:13px;margin:12px 0}.pricepanel{box-sizing:border-box;margin-top:14px;border:1px solid var(--zf-surface-border);border-radius:18px;padding:17px;background:var(--zf-price-bg)}.pricehead{display:flex;flex-direction:column;align-items:flex-start;gap:9px}.pricevalue{font-size:30px;line-height:1.2;letter-spacing:-.7px;font-weight:750}.badge{display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;min-height:38px;box-sizing:border-box;font-size:13px;line-height:1.2;border-radius:10px;padding:5px 13px;margin-left:8px;background:var(--primary-color);color:var(--text-primary-color,#fff);white-space:nowrap}.badge ha-icon{--mdc-icon-size:27px!important;margin-right:9px!important}:host([data-dark]) .badge{background:rgba(130,170,235,.2);color:var(--primary-text-color);border:1px solid var(--zf-surface-border)}.rate-table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px;font-variant-numeric:tabular-nums}.rate-table th,.rate-table td{border-top:1px solid var(--zf-surface-border);padding:10px 4px;text-align:right;vertical-align:middle}.rate-table th:first-child,.rate-table td:first-child{text-align:left}.rate-table ha-icon{--mdc-icon-size:18px!important;margin-right:4px!important}.rate-highlight{font-weight:750;color:var(--zf-active)}.tariff-note{margin-top:9px}.tariff-source{overflow-wrap:anywhere}
 .calendar{box-sizing:border-box;margin-top:19px;padding:15px;border:1px solid var(--zf-surface-border);border-radius:18px;background:var(--zf-soft)}.monthbar{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px}.monthname{font-size:15px;font-weight:650;text-transform:capitalize}.grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px;text-align:center}.weekday{font-size:11px;color:var(--secondary-text-color);padding:8px 0}.cell{box-sizing:border-box;padding:9px 0;border-radius:9px;font-size:13px;font-variant-numeric:tabular-nums;color:var(--primary-text-color);background:var(--zf-surface);border:1px solid var(--zf-surface-border)}.cell.eco{background:var(--zf-eco-bg);color:var(--zf-green)}.cell.sobriete{background:var(--zf-red-bg);color:var(--zf-red)}.cell.bonus{background:var(--zf-blue-bg);color:var(--zf-blue)}.cell.unknown{color:var(--secondary-text-color)}.cell.current{outline:2px solid var(--zf-current);outline-offset:0}.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:11px;margin-top:14px}.legend .dot{margin-right:5px}.historypanel{margin-top:20px;padding-top:18px;border-top:1px solid var(--zf-surface-border)}.historytitle{font-size:15px;font-weight:650}.historysubtitle,.historymeta,.historyempty{font-size:11px;color:var(--secondary-text-color)}.historyrow{display:flex;justify-content:space-between;gap:10px;padding:11px 0;border-bottom:1px solid var(--zf-surface-border)}.historylabel{font-weight:600}.historyrow.eco .historylabel{color:var(--zf-green)}.historyrow.sobriete .historylabel{color:var(--zf-red)}.historyrow.bonus .historylabel{color:var(--zf-blue)}.foot{border-top:1px solid var(--zf-surface-border);padding-top:12px;margin-top:15px}[hidden]{display:none!important}
 @media(max-width:450px){ha-card{padding:16px}.day{padding:14px 10px;min-height:125px}.status{font-size:21px}.status ha-icon{--mdc-icon-size:23px!important}.count{padding:12px 9px}.calendar{padding:11px}.rate-table{font-size:12px}.rate-table th,.rate-table td{padding:9px 2px}}
 @media(max-width:350px){.status{font-size:19px}.day{padding:12px 8px}.count small{font-size:11px}}
@@ -87,10 +87,30 @@ button{font:inherit;color:inherit;background:var(--zf-soft);border:1px solid var
   changeMonth(delta){const [y,m]=this._month.split('-').map(Number);const date=new Date(y,m-1+delta,1);this._month=`${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}`;this.render();}
 }
 class ZenFlexEditor extends HTMLElement{
-  constructor(){super();this._ready=false;}
+  constructor(){super();this._ready=false;this._updating=false;}
   setConfig(config){this.config={...config};this.render();}
   set hass(hass){this._hass=hass;this.updateEntities();}
-  emit(key,value){this.config={...this.config,[key]:value};this.dispatchEvent(new CustomEvent('config-changed',{detail:{config:{...this.config}},bubbles:true,composed:true}));}
+  emit(key,value){
+    if(this.config[key]===value)return;
+    this.config={...this.config,[key]:value};
+    this.dispatchEvent(new CustomEvent('config-changed',{detail:{config:{...this.config}},bubbles:true,composed:true}));
+  }
+  makeField(key,label,kind){
+    const wrap=document.createElement('div');wrap.style.cssText='display:block;margin:14px 0';
+    const field=document.createElement(kind==='select'?'ha-select':'ha-textfield');
+    field.dataset.field=key;field.setAttribute('label',label);field.style.cssText='display:block;width:100%';
+    if(kind==='select'){
+      field.setAttribute('fixedMenuPosition','');
+      const options=key==='mode'?[['full','Complet'],['compact','Compact']]:[['','Détection automatique']];
+      for(const [value,title] of options){const item=document.createElement('ha-list-item');item.value=value;item.textContent=title;field.append(item);}
+      // Les composants HA gèrent eux-mêmes leur menu (Safari iOS inclus).
+      const changed=()=>{if(this._updating)return;this.emit(key,field.value??'');};
+      field.addEventListener('selected',changed);field.addEventListener('change',changed);
+    }else{
+      field.addEventListener('change',()=>this.emit(key,field.value));
+    }
+    wrap.append(field);this.append(wrap);return field;
+  }
   updateEntities(){
     const picker=this.querySelector('[data-field="entity"]');
     if(!picker||!this._hass)return;
@@ -99,40 +119,39 @@ class ZenFlexEditor extends HTMLElement{
     if(current&&!ids.includes(current))ids.unshift(current);
     const signature=ids.join('|');
     if(picker.dataset.signature===signature)return;
+    // Ne pas modifier la liste pendant l'ouverture du menu.
+    if(picker.open)return;
     picker.dataset.signature=signature;
+    this._updating=true;
     picker.replaceChildren();
-    const auto=document.createElement('option');auto.value='';auto.textContent='Détection automatique';picker.append(auto);
-    for(const id of ids){const o=document.createElement('option');o.value=id;o.textContent=this._hass.states[id]?.attributes?.friendly_name||id;picker.append(o);}
+    const auto=document.createElement('ha-list-item');auto.value='';auto.textContent='Détection automatique';picker.append(auto);
+    for(const id of ids){const item=document.createElement('ha-list-item');item.value=id;item.textContent=this._hass.states[id]?.attributes?.friendly_name||id;picker.append(item);}
     picker.value=current;
+    this._updating=false;
   }
   render(){
     if(!this.config)return;
-    // Ne pas recréer l'éditeur à chaque mise à jour de Home Assistant : Safari iOS garde le focus et le scroll.
+    // Construire les contrôles une seule fois : pas de perte de focus ni de scroll iOS.
     if(!this._ready){
       this._ready=true;
-      const fields=[['title','Titre','text'],['entity','Entité Aujourd’hui','select'],['mode','Mode','select']];
-      for(const [key,label,type] of fields){
-        const wrap=document.createElement('label');wrap.style.cssText='display:block;margin:14px 0';
-        const caption=document.createElement('span');caption.textContent=label;wrap.append(caption);
-        const input=document.createElement(type==='select'?'select':'input');input.dataset.field=key;
-        input.style.cssText='display:block;width:100%;padding:10px;box-sizing:border-box;background:var(--card-background-color);color:var(--primary-text-color);border:1px solid var(--divider-color);border-radius:8px';
-        if(type==='text')input.type='text';
-        if(key==='mode')for(const [value,text] of [['full','Complet'],['compact','Compact']]){const o=document.createElement('option');o.value=value;o.textContent=text;input.append(o);}
-        input.addEventListener('change',()=>this.emit(key,input.value));
-        wrap.append(input);this.append(wrap);
-      }
+      this.makeField('title','Titre','text');
+      this.makeField('entity','Entité Aujourd’hui','select');
+      this.makeField('mode','Mode','select');
       for(const [key,label] of [['show_tariffs','Afficher les tarifs'],['show_remaining','Afficher les jours restants']]){
-        const wrap=document.createElement('label');wrap.style.cssText='display:flex;align-items:center;gap:9px;margin:14px 0';
-        const input=document.createElement('input');input.type='checkbox';input.dataset.field=key;
+        const wrap=document.createElement('label');wrap.style.cssText='display:flex;align-items:center;gap:10px;margin:14px 0';
+        const input=document.createElement('ha-switch');input.dataset.field=key;
         input.addEventListener('change',()=>this.emit(key,input.checked));
         wrap.append(input,document.createTextNode(label));this.append(wrap);
       }
     }
+    this._updating=true;
     for(const key of ['title','mode','show_tariffs','show_remaining']){
-      const input=this.querySelector('[data-field="'+key+'"]');if(!input||document.activeElement===input)continue;
-      if(input.type==='checkbox')input.checked=this.config[key]!==false;
+      const input=this.querySelector('[data-field="'+key+'"]');
+      if(!input||input===document.activeElement||input.open)continue;
+      if(key==='show_tariffs'||key==='show_remaining')input.checked=this.config[key]!==false;
       else input.value=this.config[key]||(key==='mode'?'full':'');
     }
+    this._updating=false;
     this.updateEntities();
   }
 }
