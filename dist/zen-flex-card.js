@@ -97,16 +97,20 @@ class ZenFlexEditor extends HTMLElement{
   }
   makeField(key,label,kind){
     const wrap=document.createElement('div');wrap.style.cssText='display:block;margin:14px 0';
-    const field=document.createElement(kind==='select'?'ha-select':'ha-textfield');
-    field.dataset.field=key;field.setAttribute('label',label);field.style.cssText='display:block;width:100%';
+    const caption=document.createElement('div');caption.textContent=label;caption.style.cssText='margin-bottom:6px;color:var(--secondary-text-color);font-size:14px';
+    wrap.append(caption);
+    const field=document.createElement(kind==='select'?'ha-selector':'ha-textfield');
+    field.dataset.field=key;field.style.cssText='display:block;width:100%';
     if(kind==='select'){
-      field.setAttribute('fixedMenuPosition','');
-      const options=key==='mode'?[['full','Complet'],['compact','Compact']]:[['','Détection automatique']];
-      for(const [value,title] of options){const item=document.createElement('ha-list-item');item.value=value;item.textContent=title;field.append(item);}
-      // Les composants HA gèrent eux-mêmes leur menu (Safari iOS inclus).
-      const changed=()=>{if(this._updating)return;this.emit(key,field.value??'');};
-      field.addEventListener('selected',changed);field.addEventListener('change',changed);
+      if(key==='mode')field.selector={select:{mode:'dropdown',options:[{value:'full',label:'Complet'},{value:'compact',label:'Compact'}]}};
+      if(this._hass)field.hass=this._hass;
+      field.addEventListener('value-changed',event=>{
+        if(this._updating)return;
+        const value=event.detail?.value;
+        if(value!==undefined)this.emit(key,value);
+      });
     }else{
+      field.setAttribute('label',label);caption.remove();
       field.addEventListener('change',()=>this.emit(key,field.value));
     }
     wrap.append(field);this.append(wrap);return field;
@@ -114,24 +118,21 @@ class ZenFlexEditor extends HTMLElement{
   updateEntities(){
     const picker=this.querySelector('[data-field="entity"]');
     if(!picker||!this._hass)return;
+    picker.hass=this._hass;
     const current=this.config?.entity||'';
     const ids=Object.keys(this._hass.states).filter(id=>id.startsWith('sensor.')&&this._hass.states[id].attributes?.zen_flex_card);
     if(current&&!ids.includes(current))ids.unshift(current);
     const signature=ids.join('|');
     if(picker.dataset.signature===signature)return;
-    // Ne pas modifier la liste pendant l'ouverture du menu.
-    if(picker.open)return;
     picker.dataset.signature=signature;
     this._updating=true;
-    picker.replaceChildren();
-    const auto=document.createElement('ha-list-item');auto.value='';auto.textContent='Détection automatique';picker.append(auto);
-    for(const id of ids){const item=document.createElement('ha-list-item');item.value=id;item.textContent=this._hass.states[id]?.attributes?.friendly_name||id;picker.append(item);}
+    picker.selector={select:{mode:'dropdown',options:[{value:'',label:'Détection automatique'},...ids.map(id=>({value:id,label:this._hass.states[id]?.attributes?.friendly_name||id}))]}};
     picker.value=current;
     this._updating=false;
   }
   render(){
     if(!this.config)return;
-    // Construire les contrôles une seule fois : pas de perte de focus ni de scroll iOS.
+    // Ne pas recréer les sélecteurs : préserve le menu ouvert et la position sur Safari iOS.
     if(!this._ready){
       this._ready=true;
       this.makeField('title','Titre','text');
@@ -145,11 +146,12 @@ class ZenFlexEditor extends HTMLElement{
       }
     }
     this._updating=true;
-    for(const key of ['title','mode','show_tariffs','show_remaining']){
+    for(const key of ['title','mode','entity','show_tariffs','show_remaining']){
       const input=this.querySelector('[data-field="'+key+'"]');
-      if(!input||input===document.activeElement||input.open)continue;
+      if(!input||input===document.activeElement)continue;
       if(key==='show_tariffs'||key==='show_remaining')input.checked=this.config[key]!==false;
       else input.value=this.config[key]||(key==='mode'?'full':'');
+      if(input.localName==='ha-selector'&&this._hass)input.hass=this._hass;
     }
     this._updating=false;
     this.updateEntities();
