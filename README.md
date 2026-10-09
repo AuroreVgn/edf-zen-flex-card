@@ -1,10 +1,11 @@
 # ⚡ EDF Zen Flex Card
 
-[![Release](https://img.shields.io/github/v/release/AuroreVgn/edf-zen-flex-card?label=release)](https://github.com/AuroreVgn/edf-zen-flex-card/releases)
-[![Licence MIT](https://img.shields.io/badge/licence-MIT-brightgreen)](LICENSE)
-[![HACS](https://img.shields.io/badge/HACS-Custom-41BDF5)](https://www.hacs.xyz/)
-[![Maintainer](https://img.shields.io/badge/maintainer-%40AuroreVgn-0078D7)](https://github.com/AuroreVgn)
-[![Ko--fi](https://img.shields.io/badge/Ko--fi-Soutenir-FF5E5B?logo=kofi&logoColor=white)](https://ko-fi.com/aurorevgn)
+[![Release](https://img.shields.io/github/v/release/AuroreVgn/edf-zen-flex-card?label=release&style=flat-square)](https://github.com/AuroreVgn/edf-zen-flex-card/releases)
+[![Licence MIT](https://img.shields.io/badge/licence-MIT-brightgreen?style=flat-square)](LICENSE)
+[![HACS](https://img.shields.io/badge/HACS-Custom-41BDF5?style=flat-square)](https://www.hacs.xyz/)
+[![Lovelace](https://img.shields.io/badge/Lovelace-Carte-7952B3?style=flat-square)](https://www.home-assistant.io/dashboards/)
+[![Maintainer](https://img.shields.io/badge/maintainer-%40AuroreVgn-0078D7?style=flat-square)](https://github.com/AuroreVgn)
+[![Ko--fi](https://img.shields.io/badge/Ko--fi-Soutenir-FF5E5B?logo=kofi&logoColor=white&style=flat-square)](https://ko-fi.com/aurorevgn)
 
 Carte personnalisée **Lovelace** pour afficher les journées et tarifs de l'offre **EDF Zen Flex** dans Home Assistant.
 
