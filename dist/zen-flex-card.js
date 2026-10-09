@@ -6,7 +6,7 @@ const LABELS={eco:'Éco',sobriete:'Sobriété',bonus:'Bonus'};
 class ZenFlexCard extends HTMLElement {
   constructor(){super();this.attachShadow({mode:'open'});this._month=null;this._signature=null;}
   setConfig(config){if(!['compact','full'].includes(config.mode||'full'))throw Error('mode : compact ou full');this.config={show_tariffs:true,show_remaining:true,...config,mode:config.mode||'full',title:config.title||'EDF Zen Flex'};this._signature=null;this.render();}
-  set hass(hass){this._hass=hass;this.render();}
+  set hass(hass){this._hass=hass;this.toggleAttribute('data-dark',Boolean(hass.themes?.darkMode));this.render();}
   getCardSize(){return this.config?.mode==='compact'?5:13;}
   static getStubConfig(){return {type:'custom:zen-flex-card',mode:'full'};}
   static getConfigElement(){return document.createElement('zen-flex-card-editor');}
@@ -31,6 +31,25 @@ class ZenFlexCard extends HTMLElement {
       .refresh-icon{display:inline-block;line-height:1;transform-origin:center}.refresh.busy .refresh-icon{animation:zen-flex-spin .8s linear infinite}.refresh:disabled{cursor:wait;opacity:.65}@keyframes zen-flex-spin{to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){.refresh.busy .refresh-icon{animation:none}.refresh.busy{opacity:.45}}
       .counts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;border-bottom:0;padding:0}.count,.count+.count{border:0;border-radius:12px;padding:13px 8px;background:var(--secondary-background-color)}.count.bonus{grid-column:1/-1}.count.eco .number{color:var(--zf-green)}.count.sobriete .number{color:var(--zf-red)}.count.bonus .number{color:var(--zf-blue)}
       .remaining-note,.tariff-source,.foot{white-space:pre-line}.remaining{margin-top:0;padding-top:0}.remaining-note{line-height:1.7}.tariff-source{line-height:1.7}
+      /* Thème sombre Home Assistant : surfaces, contraste et états lisibles */
+      :host([data-dark]){--zf-green:#65d9ae;--zf-red:#ff929b;--zf-blue:#8ebaff}
+      :host([data-dark]) ha-card{background:var(--ha-card-background,var(--card-background-color,#1c222b));border-color:rgba(255,255,255,.09);box-shadow:0 8px 28px rgba(0,0,0,.18)}
+      :host([data-dark]) .day{border:1px solid rgba(255,255,255,.07)}
+      :host([data-dark]) .day.eco{background:linear-gradient(135deg,rgba(34,160,109,.22),rgba(34,160,109,.07))}
+      :host([data-dark]) .day.sobriete{background:linear-gradient(135deg,rgba(227,80,80,.22),rgba(227,80,80,.07))}
+      :host([data-dark]) .day.bonus{background:linear-gradient(135deg,rgba(65,132,229,.23),rgba(65,132,229,.07))}
+      :host([data-dark]) .day .label,:host([data-dark]) .day .date{color:var(--primary-text-color);opacity:.78}
+      :host([data-dark]) .count{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.065)}
+      :host([data-dark]) .pricepanel{background:linear-gradient(125deg,rgba(65,132,229,.16),rgba(65,132,229,.035));border:1px solid rgba(130,170,235,.12)}
+      :host([data-dark]) .badge{background:rgba(130,170,235,.19);color:var(--primary-text-color);border:1px solid rgba(130,170,235,.22)}
+      :host([data-dark]) .cell{background:rgba(255,255,255,.055)}
+      :host([data-dark]) .cell.eco{background:rgba(34,160,109,.27);color:#c0f4df}
+      :host([data-dark]) .cell.sobriete{background:rgba(227,80,80,.28);color:#ffd3d5}
+      :host([data-dark]) .cell.bonus{background:rgba(65,132,229,.28);color:#d3e5ff}
+      :host([data-dark]) .cell.current{outline-color:var(--primary-color);outline-offset:1px}
+      :host([data-dark]) button{background:rgba(255,255,255,.045);border-color:rgba(255,255,255,.13)}
+      :host([data-dark]) button:hover{background:rgba(255,255,255,.09)}
+      @media(prefers-color-scheme:dark){:host(:not([data-light])){color-scheme:dark}}
       @media(max-width:350px){ha-card{padding:15px}.status{font-size:20px}.day{padding:15px 9px}}
       </style><ha-card><header><div><div class="brand"></div><div class="sub"></div></div><button type="button" class="refresh" aria-label="Actualiser EDF"><span class="refresh-icon" aria-hidden="true">↻</span></button></header><div class="days"></div><div class="warning"></div><div class="counts"></div><section class="remaining"><div class="remaining-note"></div></section><section class="pricepanel"><div class="pricehead"><span>Prix actuel TTC <span class="badge"></span></span><span class="pricevalue"></span></div><div class="tariff-note"></div><table class="rate-table"><thead><tr><th>€/kWh TTC</th><th>HC</th><th>HP</th></tr></thead><tbody></tbody></table></section><section class="calendar"><div class="monthbar"><button type="button" class="prev" aria-label="Mois précédent">‹</button><span class="monthname"></span><button type="button" class="next" aria-label="Mois suivant">›</button></div><div class="grid"></div><div class="legend"><span class="eco"><i class="dot"></i>Éco</span><span class="sobriete"><i class="dot"></i>Sobriété</span><span class="bonus"><i class="dot"></i>Bonus</span><span>Gris : inconnu</span></div></section></ha-card>`;
       root.querySelector('.prev').onclick=()=>this.changeMonth(-1);root.querySelector('.next').onclick=()=>this.changeMonth(1);
