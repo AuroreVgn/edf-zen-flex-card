@@ -1,4 +1,4 @@
-/* EDF Zen Flex Card 0.0.1 — no external dependencies */
+/* EDF Zen Flex Card 0.0.2 — no external dependencies */
 const DAY_ICONS={eco:'mdi:cash',sobriete:'mdi:cash-multiple',bonus:'mdi:piggy-bank'};
 const RATE_ICONS={eco_hc:'mdi:weather-night',eco_hp:'mdi:weather-sunny',sobriete_hc:'mdi:moon-waning-crescent',sobriete_hp:'mdi:white-balance-sunny'};
 const ICON=(name)=>{const el=document.createElement('ha-icon');el.setAttribute('icon',name);el.style.cssText='--mdc-icon-size:26px;vertical-align:middle;margin-right:8px;flex-shrink:0';return el;};
