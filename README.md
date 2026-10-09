@@ -1,6 +1,6 @@
 # ⚡ EDF Zen Flex Card
 
-[![Version](https://img.shields.io/badge/version-0.0.1-blue)](https://github.com/AuroreVgn/edf-zen-flex-card/releases)
+[![Version](https://img.shields.io/github/v/release/AuroreVgn/edf-zen-flex-card?display_name=tag&label=version)](https://github.com/AuroreVgn/edf-zen-flex-card/releases)
 [![Home Assistant](https://img.shields.io/badge/Home%20Assistant-carte%20Lovelace-41BDF5?logo=homeassistant)](https://www.home-assistant.io/)
 [![HACS](https://img.shields.io/badge/HACS-dépôt%20personnalisé-41BDF5)](https://www.hacs.xyz/)
 
