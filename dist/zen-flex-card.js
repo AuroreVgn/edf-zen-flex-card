@@ -50,6 +50,35 @@ class ZenFlexCard extends HTMLElement {
       :host([data-dark]) button{background:rgba(255,255,255,.045);border-color:rgba(255,255,255,.13)}
       :host([data-dark]) button:hover{background:rgba(255,255,255,.09)}
       @media(prefers-color-scheme:dark){:host(:not([data-light])){color-scheme:dark}}
+      /* Affinage sombre : panneaux cohérents, accents latéraux, calendrier lisible */
+      :host([data-dark]){--zf-green:#46dfa4;--zf-red:#ff6479;--zf-blue:#6ab6ff}
+      :host([data-dark]) .day{border:1px solid rgba(255,255,255,.09);border-left:4px solid rgba(190,200,220,.65);border-radius:17px}
+      :host([data-dark]) .day.eco{border-left-color:var(--zf-green)}
+      :host([data-dark]) .day.sobriete{border-left-color:var(--zf-red)}
+      :host([data-dark]) .day.bonus{border-left-color:var(--zf-blue)}
+      :host([data-dark]) .day:after{opacity:.025}
+      :host([data-dark]) .day:not(.eco):not(.sobriete):not(.bonus){background:rgba(100,125,170,.10)}
+      :host([data-dark]) .day .status{color:var(--primary-text-color)}
+      :host([data-dark]) .day.eco .status,:host([data-dark]) .day.sobriete .status,:host([data-dark]) .day.bonus .status{color:inherit}
+      :host([data-dark]) .count{background:rgba(100,125,170,.12);border:1px solid rgba(175,195,230,.13);border-left:3px solid rgba(175,195,230,.24);text-align:left;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:14px 16px;min-height:65px}
+      :host([data-dark]) .count.eco{border-left-color:var(--zf-green)}
+      :host([data-dark]) .count.sobriete{border-left-color:var(--zf-red)}
+      :host([data-dark]) .count.bonus{border-left-color:var(--zf-blue)}
+      :host([data-dark]) .count small{justify-content:flex-start;font-size:12px}
+      :host([data-dark]) .count small ha-icon{--mdc-icon-size:19px!important;margin-right:4px!important}
+      :host([data-dark]) .number{font-size:25px}
+      :host([data-dark]) .pricepanel{background:linear-gradient(135deg,rgba(73,112,177,.20),rgba(73,112,177,.08));border:1px solid rgba(165,192,238,.15);border-radius:18px}
+      :host([data-dark]) .rate-table ha-icon{--mdc-icon-size:19px!important;margin-right:5px!important}
+      :host([data-dark]) .rate-table th,:host([data-dark]) .rate-table td{border-top-color:rgba(190,200,230,.16)}
+      :host([data-dark]) .rate-highlight{color:#ffb83f}
+      :host([data-dark]) .calendar{border:1px solid rgba(165,192,238,.13);background:rgba(80,105,155,.065);border-radius:18px;padding:16px;margin-top:18px}
+      :host([data-dark]) .cell{color:var(--primary-text-color);background:rgba(110,140,190,.14);border:1px solid rgba(165,192,238,.08);border-radius:9px}
+      :host([data-dark]) .cell.unknown{color:var(--secondary-text-color);opacity:.88}
+      :host([data-dark]) .cell.current{outline:2px solid #ffb83f;outline-offset:0}
+      :host([data-dark]) .weekday{color:var(--secondary-text-color);opacity:1}
+      :host([data-dark]) .legend{color:var(--primary-text-color)}
+      :host([data-dark]) .refresh{background:rgba(100,125,170,.12)}
+      @media(max-width:450px){:host([data-dark]) .calendar{padding:12px}:host([data-dark]) .count{padding:12px 10px}:host([data-dark]) .cell{padding:8px 0}}
       @media(max-width:350px){ha-card{padding:15px}.status{font-size:20px}.day{padding:15px 9px}}
       </style><ha-card><header><div><div class="brand"></div><div class="sub"></div></div><button type="button" class="refresh" aria-label="Actualiser EDF"><span class="refresh-icon" aria-hidden="true">↻</span></button></header><div class="days"></div><div class="warning"></div><div class="counts"></div><section class="remaining"><div class="remaining-note"></div></section><section class="pricepanel"><div class="pricehead"><span>Prix actuel TTC <span class="badge"></span></span><span class="pricevalue"></span></div><div class="tariff-note"></div><table class="rate-table"><thead><tr><th>€/kWh TTC</th><th>HC</th><th>HP</th></tr></thead><tbody></tbody></table></section><section class="calendar"><div class="monthbar"><button type="button" class="prev" aria-label="Mois précédent">‹</button><span class="monthname"></span><button type="button" class="next" aria-label="Mois suivant">›</button></div><div class="grid"></div><div class="legend"><span class="eco"><i class="dot"></i>Éco</span><span class="sobriete"><i class="dot"></i>Sobriété</span><span class="bonus"><i class="dot"></i>Bonus</span><span>Gris : inconnu</span></div></section></ha-card>`;
       root.querySelector('.prev').onclick=()=>this.changeMonth(-1);root.querySelector('.next').onclick=()=>this.changeMonth(1);
