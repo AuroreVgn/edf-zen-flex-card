@@ -32,6 +32,12 @@ Carte personnalisée **Lovelace** pour afficher les journées et tarifs de l'off
 - Éditeur visuel permettant de personnaliser le titre, l'entité et les options d'affichage.
 - Détection automatique du capteur de journée lorsque l'entité n'est pas précisée.
 
+## 📸 Aperçus
+
+| Mode clair | Mode sombre |
+| :---: | :---: |
+| ![EDF Zen Flex Card — mode clair](assets/light.png) | ![EDF Zen Flex Card — mode sombre](assets/dark.png) |
+
 ## 📦 Installation
 
 ### Option A — HACS (recommandé)
