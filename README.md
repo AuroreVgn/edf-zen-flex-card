@@ -34,7 +34,7 @@ Carte personnalisée **Lovelace** pour afficher les journées et tarifs de l'off
 
 ## 📸 Aperçus
 
-| Mode clair | Mode sombre |
+| Mode clair + compact | Mode sombre |
 | :---: | :---: |
 | ![EDF Zen Flex Card — mode clair](assets/light.png) | ![EDF Zen Flex Card — mode sombre](assets/dark.png) |
 
