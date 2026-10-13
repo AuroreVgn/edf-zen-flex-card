@@ -1,0 +1,80 @@
+name: "🐛 Signaler un bug"
+description: "Signaler un dysfonctionnement de la carte EDF Zen Flex."
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: "Merci de vérifier les issues existantes avant de créer un nouveau signalement. Ne partagez pas de données sensibles."
+  - type: input
+    id: card_version
+    attributes:
+      label: "Version de la carte"
+      placeholder: "Ex. : 0.0.4"
+    validations:
+      required: true
+  - type: input
+    id: ha_version
+    attributes:
+      label: "Version de Home Assistant"
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: "Navigateur ou application"
+      placeholder: "Ex. : Safari iOS, Chrome, application Home Assistant"
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: "Mode d’affichage"
+      options:
+        - Complet
+        - Compact
+        - Les deux
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description du problème"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: "Étapes pour reproduire"
+      placeholder: "1. Ouvrir…\n2. Cliquer sur…\n3. Constater…"
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: "Comportement attendu"
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: "Comportement observé"
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: "Captures d’écran, console et informations complémentaires"
+      description: "Supprimez les informations sensibles."
+      render: text
+    validations:
+      required: false
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: "Vérifications"
+      options:
+        - label: "J’ai recherché si ce problème avait déjà été signalé."
+          required: true
+        - label: "J’utilise une version récente et j’ai retiré les informations sensibles."
+          required: true
