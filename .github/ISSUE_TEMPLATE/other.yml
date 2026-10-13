@@ -1,0 +1,27 @@
+name: "💬 Autre demande"
+description: "Question, documentation, compatibilité ou autre demande."
+title: "[Autre] "
+body:
+  - type: dropdown
+    id: category
+    attributes:
+      label: "Type de demande"
+      options:
+        - Question
+        - Documentation
+        - Compatibilité
+        - Autre
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: "Votre demande"
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: "Contexte ou informations complémentaires"
+    validations:
+      required: false
