@@ -1,0 +1,30 @@
+name: "✨ Proposer une amélioration"
+description: "Suggérer une nouvelle fonctionnalité ou une amélioration de la carte."
+title: "[Amélioration] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: "Besoin ou problème rencontré"
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: "Amélioration proposée"
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: "Alternatives envisagées"
+    validations:
+      required: false
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: "Vérification"
+      options:
+        - label: "J’ai vérifié qu’une demande similaire n’existe pas déjà."
+          required: true
