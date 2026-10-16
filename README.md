@@ -22,13 +22,15 @@ Carte personnalisée **Lovelace** pour afficher les journées et tarifs de l'off
 
 ## 📑 Sommaire
 
-- [✨ Fonctionnalités](#-fonctionnalités)
-- [📸 Aperçus](#-aperçus)
-- [📦 Installation](#-installation)
-- [⚙️ Configuration de la carte](#-configuration-de-la-carte)
-- [📊 Origine des données](#-origine-des-données)
-- [🤝 Signaler un problème](#-signaler-un-problème)
-- [📄 Licence](#-licence)
+- [✨ Fonctionnalités](#toc-section-1)
+- [📸 Aperçus](#toc-section-2)
+- [📦 Installation](#toc-section-3)
+- [⚙️ Configuration de la carte](#toc-section-4)
+- [📊 Origine des données](#toc-section-5)
+- [🤝 Signaler un problème](#toc-section-6)
+- [📄 Licence](#toc-section-7)
+
+<a name="toc-section-1"></a>
 
 ## ✨ Fonctionnalités
 
@@ -42,11 +44,15 @@ Carte personnalisée **Lovelace** pour afficher les journées et tarifs de l'off
 - Éditeur visuel permettant de personnaliser le titre, l'entité et les options d'affichage.
 - Détection automatique du capteur de journée lorsque l'entité n'est pas précisée.
 
+<a name="toc-section-2"></a>
+
 ## 📸 Aperçus
 
 | Mode compact | Mode complet |
 | :---: | :---: |
 | ![EDF Zen Flex Card — mode clair](assets/light.png) | ![EDF Zen Flex Card — mode sombre](assets/dark.png) |
+
+<a name="toc-section-3"></a>
 
 ## 📦 Installation
 
@@ -91,6 +97,8 @@ Cette carte étant distribuée depuis un dépôt personnalisé, il faut l'ajoute
 
 Avec HACS, la ressource habituelle est `/hacsfiles/edf-zen-flex-card/zen-flex-card.js` ; vérifier qu'elle a bien été enregistrée automatiquement.
 
+<a name="toc-section-4"></a>
+
 ## ⚙️ Configuration de la carte
 
 Ajouter une carte **Manuelle** dans le tableau de bord :
@@ -124,15 +132,21 @@ mode: compact
 | `show_tariffs` | `true` / `false` | Affichage des tarifs |
 | `show_remaining` | `true` / `false` | Affichage des jours restants |
 
+<a name="toc-section-5"></a>
+
 ## 📊 Origine des données
 
 La carte exploite les états et attributs de l'intégration **EDF Zen Flex**, notamment l'historique des journées, les compteurs annuels et les tarifs enregistrés. Elle ne contacte pas directement EDF.
 
 Les journées non connues sont affichées comme telles ; elles ne sont pas déduites ou inventées.
 
+<a name="toc-section-6"></a>
+
 ## 🤝 Signaler un problème
 
 Ouvrir une [issue GitHub](https://github.com/AuroreVgn/edf-zen-flex-card/issues) en précisant la version de Home Assistant, le navigateur, la configuration YAML et les éventuelles erreurs de console.
+
+<a name="toc-section-7"></a>
 
 ## 📄 Licence
 
