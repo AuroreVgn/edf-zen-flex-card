@@ -20,6 +20,16 @@ Carte personnalisée **Lovelace** pour afficher les journées et tarifs de l'off
 
 [Soutenir le développement sur Ko-fi](https://ko-fi.com/aurorevgn).
 
+## 📑 Sommaire
+
+- [✨ Fonctionnalités](#-fonctionnalités)
+- [📸 Aperçus](#-aperçus)
+- [📦 Installation](#-installation)
+- [⚙️ Configuration de la carte](#-configuration-de-la-carte)
+- [📊 Origine des données](#-origine-des-données)
+- [🤝 Signaler un problème](#-signaler-un-problème)
+- [📄 Licence](#-licence)
+
 ## ✨ Fonctionnalités
 
 - Affichage des journées **aujourd'hui** et **demain** : Éco, Sobriété ou Bonus.
